@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = 'prashanth-sv/dockertest'  
+        registry = 'prashanth-sv/dockertest' 
         registryCredential = 'dockerhub_id'
         dockerSwarmManager = '172.31.85.169:2375'
         dockerhost = '172.31.85.169'
@@ -8,10 +8,10 @@ pipeline {
     }
     agent any
     stages {
-        // stage('Cloning our Git') {
-        //     steps {
-        //         git  'https://github.com/prashanth-sv/dockertest.git'
-        //     }
+        stage('Cloning our Git') {
+            steps {
+                git  'https://github.com/prashanth-sv/dockertest.git'
+            }
         }
         stage('Building our image') {
             steps {
@@ -46,4 +46,4 @@ pipeline {
                 }
         }
     }
-
+}
